@@ -1,4 +1,5 @@
 import 'dart:math';
+
 class MinimumSubarray {
   int? target;
   List<int>? numbersArray;
@@ -16,7 +17,7 @@ class MinimumSubarray {
       sumOfWindow += numbersArray![right];
 
       while(sumOfWindow >= (target as int)) {
-        
+
         minLengthOfGivenArray = min(minLengthOfGivenArray, (right - left + 1).toDouble());
         sumOfWindow -= numbersArray![left];
         left++;
