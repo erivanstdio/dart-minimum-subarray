@@ -1,10 +1,10 @@
 import 'dart:math';
 
 class MinimumSubarray {
-  final int target;
+  final int targetSum;
   final List<int> numbersArray;
 
-  MinimumSubarray({required this.target, required this.numbersArray});
+  MinimumSubarray({required this.targetSum, required this.numbersArray});
 
   getMinimumSubarray() {
 
@@ -16,7 +16,7 @@ class MinimumSubarray {
 
       currentSum += numbersArray[end];
 
-      while (currentSum >= target) {
+      while (currentSum >= targetSum) {
 
         minSubarrayLength =
             min(minSubarrayLength, (end - start + 1).toDouble());
