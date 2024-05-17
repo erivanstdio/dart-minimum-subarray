@@ -1,29 +1,29 @@
 import 'dart:math';
 
 class MinimumSubarray {
-  int? target;
-  List<int>? numbersArray;
+  final int target;
+  final List<int> numbersArray;
 
-  MinimumSubarray({this.target, this.numbersArray});
+  MinimumSubarray({required this.target, required this.numbersArray});
 
   getMinimumSubarray() {
 
-    var left = 0;
-    var sumOfWindow = 0;
-    var minLengthOfGivenArray = double.infinity;
+    var start = 0;
+    var currentSum = 0;
+    var minSubarrayLength = double.infinity;
       
-    for (var right = 0; right < numbersArray!.length; right++) {
+    for (var end = 0; end < numbersArray.length; end++) {
       
-      sumOfWindow += numbersArray![right];
+      currentSum += numbersArray[end];
 
-      while(sumOfWindow >= (target as int)) {
+      while(currentSum >= target) {
 
-        minLengthOfGivenArray = min(minLengthOfGivenArray, (right - left + 1).toDouble());
-        sumOfWindow -= numbersArray![left];
-        left++;
+        minSubarrayLength = min(minSubarrayLength, (end - start + 1).toDouble());
+        currentSum -= numbersArray[start];
+        start++;
       }
     }
 
-    return minLengthOfGivenArray == double.infinity ? 0 : minLengthOfGivenArray.toInt(); 
+    return minSubarrayLength == double.infinity ? 0 : minSubarrayLength.toInt(); 
   }
 }
