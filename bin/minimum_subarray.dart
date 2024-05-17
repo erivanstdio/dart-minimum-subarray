@@ -1,7 +1,8 @@
+import 'package:minimum_subarray/minimum_subarray.class.dart';
+
 void main() {
 
-  // BTS raiz1 = BTS(10);
-  
+  MinimumSubarray targetAndArray = MinimumSubarray(target: 7, numbersArray: [2,3,1,2,4,3]);
 
-  // print('BTS root> ${raiz1.root}');
+  print('Minimum Subarray: ${targetAndArray.getMinimumSubarray()}');
 }
