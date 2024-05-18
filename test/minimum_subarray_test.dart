@@ -1,7 +1,12 @@
-// import 'package:test/test.dart';
+import 'package:minimum_subarray/minimum_subarray.class.dart';
+import 'package:test/test.dart';
 
 void main() {
-  // test('calculate', () {
-  //   expect(calculate(), 42);
-  // });
+  MinimumSubarray targetAndArray = MinimumSubarray(
+    targetSum: 20, 
+    numbersArray: [5, 1, 2, 3, 6, 4]
+  );
+  test('calculate minimum subarray', () {
+    expect(targetAndArray.getMinimumSubarray(), 6);
+  });
 }
